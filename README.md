@@ -30,7 +30,7 @@ A collaborative filtering movie recommendation system that suggests movies based
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/merveyilmas/netflix-recommendation.git
+git clone https://github.com/merveyilmas/NetflixRecommendationService.git
 cd netflix-recommendation
 ```
 
