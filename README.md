@@ -56,7 +56,7 @@ DATABASE_URL=postgresql://postgres:12345@localhost:5432/netflix_recommendation
 uvicorn app.main:app --reload
 ```
 
-## 🔧 API Endpoints
+## API Endpoints
 
 ### Authentication
 - `POST /users/` - Register a new user
@@ -69,7 +69,7 @@ uvicorn app.main:app --reload
 - `GET /recommendations/` - Get personalized movie recommendations
 - `POST /reset/` - Reset the database (for testing purposes)
 
-## 📊 Example Usage
+## Example Usage
 
 1. Register a new user:
 ```bash
@@ -118,7 +118,7 @@ curl -X POST "http://localhost:8000/reset/" \
      -H "Authorization: Bearer <your_token>"
 ```
 
-## 🤖 How It Works
+## How It Works
 
 The recommendation system uses a collaborative filtering approach:
 
@@ -130,7 +130,7 @@ The recommendation system uses a collaborative filtering approach:
    - If no similar users found: Returns most popular unrated movies
 4. **Personalization**: Recommendations are unique to each user and only include movies they haven't rated yet
 
-## 🎯 Example Scenarios
+## Example Scenarios
 
 1. **Sci-Fi Fan**:
    - Rates sci-fi movies highly
@@ -144,7 +144,7 @@ The recommendation system uses a collaborative filtering approach:
    - Rates various genres
    - Gets recommendations for unrated movies based on similar users' preferences
 
-## 🔄 Testing
+## Testing
 
 Run the test script to see the recommendation system in action:
 ```bash
@@ -157,7 +157,7 @@ This will:
 3. Simulate user ratings
 4. Show personalized recommendations for each user
 
-## 📝 Project Structure
+## Project Structure
 
 ```
 netflixRecommendation/
@@ -173,15 +173,15 @@ netflixRecommendation/
 └── README.md              # Project documentation
 ```
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - FastAPI team for the amazing web framework
 - scikit-learn team for the machine learning library
