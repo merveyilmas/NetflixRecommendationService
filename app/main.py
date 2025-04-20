@@ -7,9 +7,8 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 from pydantic import BaseModel
 
-from . import models
-from .database import engine, get_db
-from .recommendation import RecommendationSystem
+from app.models import models
+from app.database import engine, get_db
 
 # Create database tables
 models.Base.metadata.create_all(bind=engine)
