@@ -86,28 +86,39 @@ uvicorn app.main:app --reload
 ## API Endpoints
 
 ### Authentication
-- `POST /users/` - Register a new user
-- `POST /token` - Login and get access token
+- `POST /auth/register` - Register a new user
+- `POST /auth/login` - Login and get access token
+- `GET /auth/me` - Get current user information
 
 ### Movies
-- `GET /movies/` - Get list of movies
+- `GET /movies/` - Get list of movies (with pagination)
+- `GET /movies/{movie_id}` - Get movie by ID
 - `POST /movies/` - Add a new movie
-- `POST /ratings/` - Rate a movie
+- `PUT /movies/{movie_id}` - Update a movie
+- `DELETE /movies/{movie_id}` - Delete a movie
+
+### Ratings
+- `GET /ratings/user` - Get current user's ratings
+- `GET /ratings/movie/{movie_id}` - Get ratings for a specific movie
+- `POST /ratings/` - Create a new rating
+- `PUT /ratings/{rating_id}` - Update a rating
+- `DELETE /ratings/{rating_id}` - Delete a rating
+
+### Recommendations
 - `GET /recommendations/` - Get personalized movie recommendations
-- `POST /reset/` - Reset the database (for testing purposes)
 
 ## Example Usage
 
 1. Register a new user:
 ```bash
-curl -X POST "http://localhost:8000/users/" \
+curl -X POST "http://localhost:8000/auth/register" \
      -H "Content-Type: application/json" \
      -d '{"username": "testuser", "email": "test@example.com", "password": "test123"}'
 ```
 
 2. Login and get token:
 ```bash
-curl -X POST "http://localhost:8000/token" \
+curl -X POST "http://localhost:8000/auth/login" \
      -H "Content-Type: application/x-www-form-urlencoded" \
      -d "username=testuser&password=test123"
 ```
